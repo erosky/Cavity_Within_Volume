@@ -47,6 +47,7 @@ Results:
 3. Volume remains constant due to nvt
 4. MSD is steep and then less steep once cavity is filled in
 5. Potential energy drops to a lower stable value once cavity is filled in
+6. Pressure is same as that computed with stress/atom using full system volume
 Remaining:
 *** compare density to that of bulk water
 
