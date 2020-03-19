@@ -32,7 +32,7 @@ In this case, it was 4096 water molecules.
 
 Indentor cavity with nph and temp/csvr - barostat at 1 atm and cooling ramp of 0.5 K/ns
 Results:
-1. Volume contracts during equilibration
+1. Volume contracts during equilibration, but ending density is still very comprable to bulk water measurement.
 2. Average homogeneous freezing temperature is the same as for 1 atm bulk water
 Remaining:
 *** should compare density to that of bulk water, and maybe average order parameter? - take average of log file N/(vol-cavity)
