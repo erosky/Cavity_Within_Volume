@@ -1,0 +1,61 @@
+Interested in making a 
+
+1nm = 10 angstroms
+
+have been simulating 50 cubic angstroms, so would be 5 cubic nanometers
+
+
+
+Would be interested in 1 - 3 nm radius droplet sizes for very noticeable pressure effects.
+1 nm drop --> 10 Angstrom radius --> would want box size of 60 Angstroms
+2 nm drop --> 20 Angstrom radius --> would want 120 Angstrom box dimensions? (maybe keep N constant)
+3 nm drop --> 30 Angstrom radius --> minimum box size of 100 Angstrom? or 120 Angstrom
+
+
+lets think about the 120 Angstrom 3nm case
+Volume of liquid water: We have 120^3 - 4/3*pi*(30)^3 = 
+
+Would require N water molecules 
+approximately 0.03278 N/A^3
+
+we would have less than 10,000 water molecules if we use a radius of 1.5 nm and have 1.5 nm of water on each side as well. This should be okay as a 1.5 cubic volume has on the order of 100 water molecules in it, but unfortunately thats only 4 or 5 molecules along each axis.
+
+Initially, we will be using a radius of curvature that corresponds to -1000 Atm of negative laplace pressure (using the mW model surface tension computed by Li et. al.)
+This is so that I can compare the results to the results from bulk water that has -1000 Atm pressure imposed.
+The amount of volume surrounding the cavity is chosen so that the volume of water is the same as the volume used in the bulk simulations at both 1 atm and -1000 atm. 
+This is due to the fact that nucleation rate is an extensive property so that the larger the volume the more likely for nucleation to take place.
+In this case, it was 4096 water molecules.
+
+* Must determine cutoff distance to use for ML order parameter
+* Must determine surface tension for ML - ask Tianshu Li how they did this?
+
+
+Indentor cavity with nph and temp/csvr - barostat at 1 atm and cooling ramp of 0.5 K/ns
+Results:
+1. Volume contracts during equilibration
+2. Average homogeneous freezing temperature is the same as for 1 atm bulk water
+Remaining:
+*** should compare density to that of bulk water, and maybe average order parameter? - take average of log file N/(vol-cavity)
+*** would like to try this with nvt instead of nph - does pressure stay around the 1 atm starting value
+** during equilibration should check the stress/atom compared to computed pressure
+
+
+Free cavity with nvt - equilibrated at 1 Atm, and nve, with indentor in place. Ran with Nose/Hoover NVT
+Results:
+1. Water fills in cavity within two nanoseconds
+2. Pressure becomes a negative value
+3. Volume remains constant due to nvt
+4. MSD is steep and then less steep once cavity is filled in
+5. Potential energy drops to a lower stable value once cavity is filled in
+Remaining:
+*** compare density to that of bulk water
+
+
+Next Simulations:
+1. Indentor cavity with nvt (but still equilibrated at 1 atm? - will depend on how density compares to bulk, and how stress/atom measurement compares to computed pressure )
+*** volume doesn't really change much after the water has been equilibrated at 1 Atm... so fixing volume may not have any influence on the freezing temperature. But perhaps removing the barostat will have an influence? Will the pressure remain around 1 Atm or will it drift to another value
+
+
+ Free cavity with nvt and barostat? Does cavity fill in the same way?
+
+
