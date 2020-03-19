@@ -53,8 +53,11 @@ Remaining:
 
 
 Next Simulations:
-1. Indentor cavity with nvt (but still equilibrated at 1 atm? - will depend on how density compares to bulk, and how stress/atom measurement compares to computed pressure )
+
+Indentor cavity with nvt (but still equilibrated at 1 atm? - will depend on how density compares to bulk, and how stress/atom measurement compares to computed pressure )
 *** volume doesn't really change much after the water has been equilibrated at 1 Atm... so fixing volume may not have any influence on the freezing temperature. But perhaps removing the barostat will have an influence? Will the pressure remain around 1 Atm or will it drift to another value
+1. Pressure remains around 1 Atm during beginning, at the end it has ~400 Atm, maybe after freezing.
+
 
 
  Free cavity with nvt and barostat? Does cavity fill in the same way?
