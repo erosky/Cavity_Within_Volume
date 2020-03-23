@@ -9,11 +9,11 @@
 echo $1
 
 run=$1
-start=45
-end=160045
-logfile="./run_${run}/log.run_hardcavity_freeze_${run}"
+start=39
+end=100038
+logfile="./run_${run}/log.run_hardcavity_freeze_nvt_${run}"
 directory="./analysis/run_${run}"
-datafile="./analysis/run_${run}/run_hardcavity_freeze_${run}.dat"
+datafile="./analysis/run_${run}/run_hardcavity_freeze_nvt_${run}.dat"
 
 temp="215-190"
 pres="1 Atmosphere"

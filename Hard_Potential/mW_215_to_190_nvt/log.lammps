@@ -2,9 +2,9 @@ LAMMPS (7 Aug 2019)
 # Simulation of monatomic water
 # Real units, atomic atom style (no bonded interactions)
 
-variable        SEED string 28300
-variable        NAME string hardcavity_freeze_nvt_0
-variable        DIR string run_0
+variable        SEED string 14650
+variable        NAME string hardcavity_freeze_nvt_4
+variable        DIR string run_4
 variable        TEMP string 215
 variable        END_TEMP string 190
 variable        PRES string 1.0
@@ -14,5 +14,5 @@ variable        PCOUPL string 10000.0
 units	   	    real
 atom_style 	    atomic
 log				${DIR}/log.eq_${NAME}
-log				run_0/log.eq_${NAME}
-log				run_0/log.eq_hardcavity_freeze_nvt_0
+log				run_4/log.eq_${NAME}
+log				run_4/log.eq_hardcavity_freeze_nvt_4
