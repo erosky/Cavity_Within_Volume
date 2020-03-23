@@ -4,7 +4,7 @@
 # extract data from dump files using the ice_ratio.awk script
 
 
-for VARIABLE in 0
+for VARIABLE in 1 2 3 4
 do
 	echo $VARIABLE
 	mkdir analysis/run_$VARIABLE
