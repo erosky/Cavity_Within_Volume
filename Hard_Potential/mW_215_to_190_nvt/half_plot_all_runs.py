@@ -15,7 +15,7 @@ runs = inputs[1:]
 
 # create file for freezing temperatures in analysis folder
 # data: RUN TEMP
-temperature_file = 'analysis/freeze_temperatures_halfthresh_hardcavity_mW.dat'
+temperature_file = 'analysis/freeze_temperatures_halfthresh_hardcavity_nvt_mW.dat'
 f = open(temperature_file, "w")
 
 
@@ -60,12 +60,12 @@ S_avg = (S_sum/len(freeze_temperatures))**(0.5)
 
 
 # create file for plot of all runs
-all_runs_plot = 'analysis/all_runs_halfthresh_hardcavity_mW.png'
+all_runs_plot = 'analysis/all_runs_halfthresh_hardcavity_nvt_mW.png'
 
 plt.figure(1)
 plt.xlim(215,190)
 plt.ylim(0,0.9)
-plt.title('Freezing at 1 atm with 1.38nm "hard" cavity, mW Model')
+plt.title('Freezing, NVT with 1.38nm "hard" cavity, mW Model')
 plt.xlabel('Temperature (K)')
 plt.ylabel('N ice / N total')
 for run in runs:
@@ -84,7 +84,7 @@ all_gradients_plot = 'analysis/all_gradients_halfthresh_hardcavity_mW.png'
 
 plt.figure(2)
 plt.xlim(215,190)
-plt.title('Freezing at 1 atm with 1.38nm "hard" cavity, mW Model')
+plt.title('Freezing at NVT with 1.38nm "hard" cavity, mW Model')
 plt.xlabel('Temperature (K)')
 plt.ylabel('Rate of change for (N ice / N total)')
 for run in runs:
