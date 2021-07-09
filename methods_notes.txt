@@ -63,3 +63,7 @@ Indentor cavity with nvt (but still equilibrated at 1 atm? - will depend on how 
  Free cavity with nvt and barostat? Does cavity fill in the same way?
 
 
+measuring order parameter of the spherical shell
+- set up radial shell that counts as the surface and option for either inside or outside to be the "Bulk"
+
+Later step would be to calculate surface tension (refer to that paper)
