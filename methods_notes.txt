@@ -67,3 +67,10 @@ measuring order parameter of the spherical shell
 - set up radial shell that counts as the surface and option for either inside or outside to be the "Bulk"
 
 Later step would be to calculate surface tension (refer to that paper)
+
+immediate next steps:
+plot pressure v time for those old nvt runs
+can just set up the cylindrical configurations under different conditions for enough timesteps that I can get good statistics on the order parameter as a function of radius.
+
+sim cylinder "droplet" of same rad
+
