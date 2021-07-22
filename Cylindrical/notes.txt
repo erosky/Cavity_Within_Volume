@@ -1,0 +1,4 @@
+equation for laplace pressure induced by cylindrical curvature
+P = surf_tens(1/R + 1/R') = surf_tens(1/R)
+
+MLmW model surface tension: 66.8 mJ/m^2
