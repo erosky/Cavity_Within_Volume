@@ -10,7 +10,7 @@ LAMMPS (29 Oct 2020)
 
 variable            TEMP string 225
 variable            PRES string 1
-variable            NAME string config_10A
+variable            NAME string config_10A_NVT
 variable            TCOUPL string 5000.0
 variable            PCOUPL string 10000.0
 variable            TDAMP string 1000.0
@@ -19,4 +19,4 @@ variable            PDAMP string 2500.0
 units	   	    real
 atom_style 	    atomic
 log		    log.eq_${NAME}
-log		    log.eq_config_10A
+log		    log.eq_config_10A_NVT
