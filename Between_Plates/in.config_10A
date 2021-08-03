@@ -89,8 +89,8 @@ fix                 2 drop nvt temp ${TEMP} ${TEMP} 1000.0
 # compute order parameter
 compute             3 all orientorder/atom nnn NULL cutoff 3.5
 
-# Run 0.5ns simulation
+# Run 1.0ns simulation
 thermo              200
 dump		        1 all custom 400 prod.${NAME}.dump id type x y z vx vy vz c_3[*] c_2[*]
-run                 100000
+run                 200000
 write_data 		data.${NAME}_run

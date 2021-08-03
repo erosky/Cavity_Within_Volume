@@ -1,0 +1,37 @@
+LAMMPS (29 Oct 2020)
+# create box
+# equilibrate atoms
+# cut out sphere
+# expand box by one cutoff length
+# equilibrate for a little
+# save configuration
+# run longer
+# save second configuration
+
+# 45A thick droplet cylinders
+
+
+
+
+#------------------------------------------------------------------------------
+
+variable            NAME string 10A_cylinder
+variable            TEMP string 225
+variable            PRES string 1
+variable            TCOUPL string 5000.0
+variable            PCOUPL string 10000.0
+variable            TDAMP string 1000.0
+variable            PDAMP string 2500.0
+
+
+
+## Real units, atomic atom style (no bonded interactions)
+#
+units               real
+atom_style          atomic
+
+
+##### Fill Box #####
+
+log                 log.eq_${NAME}
+log                 log.eq_10A_cylinder

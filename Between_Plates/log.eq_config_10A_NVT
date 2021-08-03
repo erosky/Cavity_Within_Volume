@@ -12,7 +12,7 @@ Reading data file ...
   48200 atoms
   reading velocities ...
   48200 velocities
-  read_data CPU = 0.089 seconds
+  read_data CPU = 0.099 seconds
 read_data data.10A_cylinder add append shift 0.0 0.0 ${Z_SHIFT} group drop
 read_data data.10A_cylinder add append shift 0.0 0.0 20 group drop
 Reading data file ...
@@ -55,9 +55,9 @@ Per MPI rank memory allocation (min/avg/max) = 5.572 | 5.583 | 5.600 Mbytes
 Step Temp E_pair E_mol TotEng Press 
        0    224.16618   -470224.46            0   -435212.29    1131.4916 
      812    224.16618   -559785.75            0   -524773.57    296.95722 
-Loop time of 10.2763 on 6 procs for 812 steps with 52399 atoms
+Loop time of 11.4466 on 6 procs for 812 steps with 52399 atoms
 
-99.8% CPU use with 6 MPI tasks x no OpenMP threads
+99.6% CPU use with 6 MPI tasks x no OpenMP threads
 
 Minimization stats:
   Stopping criterion = max force evaluations
@@ -71,12 +71,12 @@ Minimization stats:
 MPI task timing breakdown:
 Section |  min time  |  avg time  |  max time  |%varavg| %total
 ---------------------------------------------------------------
-Pair    | 6.7196     | 7.7635     | 9.5257     |  41.3 | 75.55
-Neigh   | 0.27951    | 0.31132    | 0.37401    |   7.6 |  3.03
-Comm    | 0.082625   | 1.9075     | 2.9831     |  86.4 | 18.56
+Pair    | 7.2978     | 8.2702     | 10.183     |  41.2 | 72.25
+Neigh   | 0.29398    | 0.33366    | 0.42802    |   8.9 |  2.91
+Comm    | 0.39909    | 2.4075     | 3.4197     |  79.6 | 21.03
 Output  | 0          | 0          | 0          |   0.0 |  0.00
 Modify  | 0          | 0          | 0          |   0.0 |  0.00
-Other   |            | 0.2939     |            |       |  2.86
+Other   |            | 0.4352     |            |       |  3.80
 
 Nlocal:        8733.17 ave       10206 max        7979 min
 Histogram: 4 0 0 0 0 0 0 0 0 2
@@ -1131,20 +1131,20 @@ Step Temp Press Volume TotEng KinEng PotEng c_1[4] Density
   100700     224.7661    9.4552105      2919497   -522141.03    35105.877   -557246.91    79.554003   0.53690603 
   100800    224.54897   -6.8652265    2919580.2   -522218.02    35071.964   -557289.98    79.853564   0.53689074 
   100812    224.54071   -16.482802      2919482   -522206.54    35070.674   -557277.22    79.779266   0.53690881 
-Loop time of 993.224 on 6 procs for 100000 steps with 52399 atoms
+Loop time of 1054.97 on 6 procs for 100000 steps with 52399 atoms
 
-Performance: 43.495 ns/day, 0.552 hours/ns, 100.682 timesteps/s
-99.8% CPU use with 6 MPI tasks x no OpenMP threads
+Performance: 40.949 ns/day, 0.586 hours/ns, 94.789 timesteps/s
+99.7% CPU use with 6 MPI tasks x no OpenMP threads
 
 MPI task timing breakdown:
 Section |  min time  |  avg time  |  max time  |%varavg| %total
 ---------------------------------------------------------------
-Pair    | 615.71     | 714.19     | 889.68     | 420.7 | 71.91
-Neigh   | 52.548     | 58.464     | 69.929     | 103.8 |  5.89
-Comm    | 9.4502     | 196.44     | 300.87     | 858.7 | 19.78
-Output  | 2.0043     | 2.011      | 2.022      |   0.4 |  0.20
-Modify  | 15.151     | 15.792     | 16.837     |  17.9 |  1.59
-Other   |            | 6.331      |            |       |  0.64
+Pair    | 650.67     | 741.37     | 917.95     | 409.7 | 70.27
+Neigh   | 54.063     | 59.837     | 71.286     | 102.1 |  5.67
+Comm    | 34.03      | 222.16     | 318.58     | 801.7 | 21.06
+Output  | 2.1663     | 2.1729     | 2.1859     |   0.4 |  0.21
+Modify  | 20.453     | 21.126     | 22.296     |  17.8 |  2.00
+Other   |            | 8.313      |            |       |  0.79
 
 Nlocal:        8733.17 ave       10189 max        7977 min
 Histogram: 4 0 0 0 0 0 0 0 0 2
