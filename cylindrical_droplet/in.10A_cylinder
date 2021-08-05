@@ -40,13 +40,13 @@ lattice	     sc 1
 region 	     all block 0 270 0 270 0 20 units box
 create_box          1 all 
 
-# Create quasi-2d droplet, with radius of 4.5nm (45 A)
+# Create quasi-2d droplet, with radius of 1nm (10 A)
 #
-region              droplet cylinder z 135 135 45 -0.0 20 units box
+region              droplet cylinder z 135 135 10 -0.0 50 units box
 
 # fill box with randomly distributed atoms such that density is ~0.0333 N/A^3
 #
-create_atoms        1 random 4199 63782 droplet
+create_atoms        1 random 519 63782 droplet
 mass                1 18.015
 
 # Define potential
