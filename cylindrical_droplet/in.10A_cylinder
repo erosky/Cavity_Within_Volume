@@ -97,6 +97,7 @@ unfix               4
 ################################################  
 
 reset_timestep      0
+timestep            2.0
 log                 log.run_${NAME}
 
 # Set production fixes - Nose/Hoover
@@ -107,8 +108,8 @@ fix                 2 all nvt temp ${TEMP} ${TEMP} 1000.0
 compute		2 all stress/atom NULL
 compute             3 all orientorder/atom nnn NULL cutoff 3.5
 
-# Run 0.5ns simulation
+# Run 10ns simulation
 thermo              200
 dump		        1 all custom 400 prod.${NAME}.dump id type x y z vx vy vz c_3[*] c_2[*]
-run                 100000
+run                 5000000
 write_data 		data.${NAME}_run
