@@ -1,0 +1,9 @@
+diamter
+(119,134) -> (150,135)
+(135,149) -> (136,120)
+31, 29
+
+dimaeter = 30 Angstroms
+radius = 20 Angstroms
+volume = 14137
+
