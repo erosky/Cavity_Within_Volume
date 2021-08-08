@@ -108,7 +108,7 @@ fix                 2 all nvt temp ${TEMP} ${TEMP} 1000.0
 compute		2 all stress/atom NULL
 compute        peratom all stress/atom NULL
 compute        p all reduce sum c_peratom[1] c_peratom[2] c_peratom[3]
-variable       press equal -(c_p[1]+c_p[2]+c_p[3])/(3*vol)
+variable       press equal -(c_p[1]+c_p[2]+c_p[3])/(3*14137)
 thermo_style        custom step temp press vol etotal ke pe v_press
 compute             3 all orientorder/atom nnn NULL cutoff 3.5
 
