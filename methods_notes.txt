@@ -74,3 +74,12 @@ can just set up the cylindrical configurations under different conditions for en
 
 sim cylinder "droplet" of same rad
 
+
+
+-------
+Pressure
+
+computing stress/atom and summing and dividing by 3*V where V is the volume of the cylindrical droplet does not work.
+
+
+

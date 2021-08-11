@@ -19,7 +19,7 @@ gnuplot -e "set terminal png size 1000,600; \
             set ylabel 'atm'; \
             set xlabel '10^-5 ns'; \
             set style data lines; \
-            plot '${datafile}' using 1:3"
+            plot '${datafile}' using 1:8"
 
 
 # Plot and save Volume
