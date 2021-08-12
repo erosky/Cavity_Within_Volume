@@ -1,0 +1,74 @@
+READ IN DATA (function)
+
+define N
+function get_N(data_file)
+
+LxNxM matrix
+
+L = timesteps
+N = atoms
+M = properties
+
+
+FIND CENTER OF MASS
+
+function center_mass(matrix)
+
+- get L length list of x_cm
+- get L length list of y_cm
+- average x_cm values
+- average y_cm values
+
+define x_cm_L
+define y_cm_L
+define x_cm
+define y_cm
+
+for all L:
+	sum all x_i, divide sum by N
+	add to list x_cm_L
+	
+------
+
+function position_to_radius(x_i, y_i)
+x = x_i - x_cm
+y = y_i - y_cm
+r_i = sqrt(x^2 + y^2)
+
+New matrix is LxN where the value is r_i for each atom at each timestep
+
+--------
+define bin_width
+define r_max
+
+New matrix LxRxM where L = timesteps, R=r_max/bin_width, and M = properties
+
+properties:
+- N_s = number of atoms in shell
+- V_s = volume of shell
+- density
+- local pressure
+- order parameter
+
+define boundaries
+while N*bin_width < r_max:
+[0, bin_width, ... , N*bin_width]
+
+function V_s
+while i < R:
+V_s = (4/3)pi[(i+1)^3 - i^3)
+
+for N:
+	for boundaries:
+	if r_i between boundary_i and boundary_i + 1:
+		add to matrix
+		add to pressure_sum
+		add to order_sum
+		
+
+
+
+
+	
+	
+

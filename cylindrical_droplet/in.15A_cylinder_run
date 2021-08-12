@@ -28,8 +28,10 @@ log                 log.run_${NAME}
 fix                 2 all nvt temp ${TEMP} ${TEMP} 1000.0
 
 # divide "droplet" into core and surface
-region		core cylinder z 135 135 6 INF INF units box
-region		surface cylinder z 135 135 6 INF INF units box side out
+region		core_reg cylinder z 135 135 6 INF INF units box
+region		surface_reg cylinder z 135 135 6 INF INF units box side out
+group		core dynamic all region core_reg
+group		surface dynamic all region surface_reg
 
 # compute pressure core
 compute        peratom_core core stress/atom NULL
