@@ -22,6 +22,11 @@ read_data		data.15A_core
 #
 timestep            2.0
 
+# Define potential
+#
+pair_style          sw
+pair_coeff          * * ML_mW.sw mW
+
 # Set production fixes - Nose/Hoover
 #
 fix                 2 all nvt temp ${TEMP} ${TEMP} 1000.0
