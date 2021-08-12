@@ -15,7 +15,7 @@ LAMMPS (29 Oct 2020)
 
 #------------------------------------------------------------------------------
 
-variable            NAME string 10A_pres
+variable            NAME string 15A_core
 variable            TEMP string 225
 variable            PRES string 1
 variable            TCOUPL string 5000.0
@@ -34,4 +34,4 @@ atom_style          atomic
 ##### Fill Box #####
 
 log                 log.eq_${NAME}
-log                 log.eq_10A_pres
+log                 log.eq_15A_core
