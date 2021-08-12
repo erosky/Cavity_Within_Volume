@@ -7,7 +7,9 @@ variable            PCOUPL string 10000.0
 variable            TDAMP string 1000.0
 variable            PDAMP string 2500.0
 
-
+units		real
+atom_style	atomic
+log		log.run_${NAME}
 
 
 ################################################
@@ -18,10 +20,7 @@ read_data		data.15A_core
 
 ## Real units, atomic atom style (no bonded interactions)
 #
-units               real
-atom_style          atomic
 timestep            2.0
-log                 log.run_${NAME}
 
 # Set production fixes - Nose/Hoover
 #
