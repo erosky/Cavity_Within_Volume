@@ -1,0 +1,34 @@
+
+
+################################################
+#######         Run Simulation         #########
+################################################
+
+read_data		data.15A_core
+Reading data file ...
+  orthogonal box = (2.9194518 2.9194518 0.32438353) to (267.08055 267.08055 29.675616)
+  2 by 3 by 1 MPI processor grid
+  reading atoms ...
+  670 atoms
+  reading velocities ...
+  670 velocities
+  read_data CPU = 0.002 seconds
+
+## Real units, atomic atom style (no bonded interactions)
+#
+timestep            2.0
+
+# Set production fixes - Nose/Hoover
+#
+fix                 2 all nvt temp ${TEMP} ${TEMP} 1000.0
+fix                 2 all nvt temp 225 ${TEMP} 1000.0
+fix                 2 all nvt temp 225 225 1000.0
+
+# divide "droplet" into core and surface
+region		core cylinder z 135 135 6 INF INF units box
+region		surface cylinder z 135 135 6 INF INF units box side out
+
+# compute pressure core
+compute        peratom_core core stress/atom NULL
+ERROR: Could not find compute group ID (../compute.cpp:62)
+Last command: compute        peratom_core core stress/atom NULL

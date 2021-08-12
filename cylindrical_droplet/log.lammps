@@ -1,19 +1,4 @@
 LAMMPS (29 Oct 2020)
-# create box
-# equilibrate atoms
-# cut out sphere
-# expand box by one cutoff length
-# equilibrate for a little
-# save configuration
-# run longer
-# save second configuration
-
-# 45A thick droplet cylinders
-
-
-
-
-#------------------------------------------------------------------------------
 
 variable            NAME string 15A_core
 variable            TEMP string 225
@@ -23,15 +8,7 @@ variable            PCOUPL string 10000.0
 variable            TDAMP string 1000.0
 variable            PDAMP string 2500.0
 
-
-
-## Real units, atomic atom style (no bonded interactions)
-#
-units               real
-atom_style          atomic
-
-
-##### Fill Box #####
-
-log                 log.eq_${NAME}
-log                 log.eq_15A_core
+units		real
+atom_style	atomic
+log		log.run_${NAME}
+log		log.run_15A_core
