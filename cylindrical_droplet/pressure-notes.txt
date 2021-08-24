@@ -4,6 +4,6 @@ diamter
 31, 29
 
 dimaeter = 30 Angstroms
-radius = 20 Angstroms
+height = 20 Angstroms
 volume = 14137
 

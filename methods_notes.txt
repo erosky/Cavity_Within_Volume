@@ -81,5 +81,14 @@ Pressure
 
 computing stress/atom and summing and dividing by 3*V where V is the volume of the cylindrical droplet does not work.
 
+I equilibrate the cylinder in an NVE ensemble. Production run is in NVT. To your knowledge, is there anything fundamentally wrong with this approach of measuring the internal pressure of this cylinder?
+
+
+According the the laplace pressure equation, my 1.5 nm radius "droplet" should have an internal pressure of roughly 450 atm. The result that I get from my simulation is 150 atm instead. I suppose this isn't horribly off, since I do believe the surface tension decreases with smaller radii of curvature. But I'm not an expert in MD simulation, so I often wonder if I'm making a silly mistake!
+
+From the plot of normal and tangential pressure that I attached, it looks like the large pressure variations mostly occur within ~1 nm of a flat surface.
+
+This article is similar to the measurements I'd like to make with the ML-mW model and has given me a lot to think about, but they use atomistic TIP4P and gromacs: https://www.nature.com/articles/s41467-018-04816-2 
+One thing that I find interesting is their figure 7, because those big pressure variations at the interface seem to only extend ~0.5 nm into their 1.5 prese
 
 
