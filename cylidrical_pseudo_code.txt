@@ -1,13 +1,23 @@
 READ IN DATA (function)
 
-define N
+define N (line 4 of dump file)
 function get_N(data_file)
+
+define labels from rows after "ITEMS: ATOMS"
+
 
 LxNxM matrix
 
 L = timesteps
 N = atoms
 M = properties
+
+N and M are known at start
+
+find "ITEM: TIMESTEP"
+next line is timestep, add to matrix L
+for each line after "ITEMS: ATOMS", check first row for index, add following rows to L[N]
+
 
 
 FIND CENTER OF MASS
