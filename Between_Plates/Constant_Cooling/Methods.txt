@@ -17,14 +17,27 @@ Portland
 x setup gitlab then move scripts to research machine, so gabe can run them
 x setup between plates cooling ramps for gabe to run
 x Manuscript edits
-- BUS: analyze desnity v pressure, setup cooling ramps to be run on research machine, email about portage.
+
+BUS: 
+x analyze desnity v pressure, 
+x setup cooling ramps to be run on research machine, 
+- email about portage.
 
 Nevada City
 - Check one run of water bridge before having gabe run script
-- plot density vs pressure
+x plot density vs pressure
 - analyze first 5 or 10 between plate cooling ramps
 - run more cooling ramps
 - Finish c++ code
 
 San Diego
 - Spicule Studies
+
+
+Tuesday:
+- email about portage
+- c++ code
+
+Wednesday:
+- spicule study
+- analyze simmys
