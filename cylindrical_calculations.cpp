@@ -1,12 +1,14 @@
 // cylindrical_calc.cpp
 //
 // Description:
-// Finds values as a funciton of radius for a cylindrical symmetry
+// Finds values as a function of radius for a cylindrical symmetry
 // Basic implementation for a cylindrical "droplet" 
 // to be expanded on for future applications
 //
 // Usage: ./cylindrical_calc.x INPUT_FILE OUTPUT_FILE
-//  e.g.: ./MatrixMultiplyP.x cylinder.dump cylinder.dat
+//  e.g.: ./cylindrical_calc.x cylinder.dump cylinder.dat
+//
+// Outputs avg q6 parameter, avg density, avg MSD 
 //
 // Metrics:
 // Date/Time           : 2021-08-11
@@ -22,6 +24,7 @@
 
 
 #include <iostream>
+#include <fstream>
 #include <string>
 #include <cmath>
 #include <fstream>
@@ -147,6 +150,26 @@ int main(int argc, char* argv[])
   for (int j=0; j<N; j++) {
     cout << C[j] <<endl;
   }
+  
+  
+  // SAMPLE CODE TO READ DATA IN FROM FILE
+  string array[2]; 
+  short loop=0; 
+  string line; 
+  ifstream myfile ("Codespeedy.txt"); 
+  if (myfile.is_open()) 
+  {
+    while (! myfile.eof() ) 
+      {
+          getline (myfile,line); 
+          array[loop] = line;
+          cout << array[loop] << endl; 
+          loop++;
+      }
+      myfile.close(); 
+  }
+  else cout << "can't open the file"; 
+  system("PAUSE");
 
   return 0;
 }

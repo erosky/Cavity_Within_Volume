@@ -7,9 +7,9 @@ LAMMPS (29 Oct 2020)
 
 
 
-variable            SEED string 28415
-variable            NAME string pres_density_2
-variable            DIR string run_2
+variable            SEED string 18580
+variable            NAME string pres_density_3
+variable            DIR string run_3
 variable            START_TEMP string 230
 variable            END_TEMP string 205
 variable            STEPS string 10000000
@@ -22,5 +22,5 @@ variable            PDAMP string 2500.0
 units	   	    real
 atom_style 	    atomic
 log		    ${DIR}/log.eq_${NAME}
-log		    run_2/log.eq_${NAME}
-log		    run_2/log.eq_pres_density_2
+log		    run_3/log.eq_${NAME}
+log		    run_3/log.eq_pres_density_3
