@@ -1,0 +1,63 @@
+
+variable            NAME string 15A_cavity_run5
+variable            TEMP string 225
+variable            PRES string 1
+variable            TCOUPL string 5000.0
+variable            PCOUPL string 10000.0
+variable            TDAMP string 1000.0
+variable            PDAMP string 2500.0
+
+units		real
+atom_style	atomic
+log		log.run_${NAME}
+
+
+################################################
+#######         Run Simulation         #########
+################################################  
+
+read_data		data.15A_cavity_eq_fix5
+fix 		       5 all indent 5.0 cylinder z 35 35 15 side out units box
+
+## Real units, atomic atom style (no bonded interactions)
+#
+timestep            2.0
+
+# Define potential
+#
+pair_style          sw
+pair_coeff          * * ML_mW.sw mW
+
+# Set production fixes - Nose/Hoover
+#
+fix                 2 all nvt temp ${TEMP} ${TEMP} 1000.0
+
+# divide "droplet" into core and surface
+region		core_reg cylinder z 35 35 25 INF INF units box side out
+region		surface_reg cylinder z 35 35 25 INF INF units box side in
+group		core dynamic all region core_reg
+group		surface dynamic all region surface_reg
+
+# compute pressure core
+compute        peratom_core core stress/atom NULL
+compute        p_core core reduce sum c_peratom_core[1] c_peratom_core[2] c_peratom_core[3]
+variable       press_core equal -(c_p_core[1]+c_p_core[2]+c_p_core[3])/(3*2974.46)
+
+
+# compute pressure surface
+compute        peratom_surf surface stress/atom NULL
+compute        p_surf surface reduce sum c_peratom_surf[1] c_peratom_surf[2] c_peratom_surf[3]
+variable       press_surf equal -(c_p_surf[1]+c_p_surf[2]+c_p_surf[3])/(3*13220)
+
+# compute order parameter
+compute	order all orientorder/atom nnn NULL cutoff 3.5
+compute        peratom all stress/atom NULL
+compute        p all reduce sum c_peratom[1] c_peratom[2] c_peratom[3]
+variable       press equal -(c_p[1]+c_p[2]+c_p[3])/(3*16194.28)
+
+# Run 5ns simulation
+thermo_style        custom step temp press vol etotal ke pe v_press v_press_core v_press_surf
+thermo              200
+dump		        1 all custom 400 prod.${NAME}.dump id type x y z vx vy vz c_order[*] c_peratom[*]
+run                 2500000
+write_data 		data.${NAME}_run

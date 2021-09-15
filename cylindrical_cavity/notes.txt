@@ -1,0 +1,4 @@
+15 A radius cavity surrounded by 4096 water molecules
+fill box with randomly distributed atoms such that density is ~0.0333 N/A^3
+
+Box size is 70x70x29.3 Angstrom
