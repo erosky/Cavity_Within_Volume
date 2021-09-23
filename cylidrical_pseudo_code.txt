@@ -25,7 +25,7 @@ for each line after "ITEMS: ATOMS", check first row for index, add following row
 
 FIND CENTER OF MASS
 
-function center_mass(matrix)
+function center_mass(matrix) ---- best as an array
 
 - get L length list of x_cm
 - get L length list of y_cm
@@ -43,7 +43,7 @@ for all L:
 	
 ------
 
-function position_to_radius(x_i, y_i)
+function position_to_radius(x_i, y_i) --- returns single value
 x = x_i - x_cm
 y = y_i - y_cm
 r_i = sqrt(x^2 + y^2)

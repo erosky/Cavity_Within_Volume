@@ -45,9 +45,9 @@ create_box          1 all
 region              water cylinder z 35 35 15.1 -0.0 29.3 units box side out
 fix 		    5 all indent 5.0 cylinder z 35 35 15 side out units box
 
-# fill box with randomly distributed atoms such that density is ~0.0333 N/A^3
+# fill box with randomly distributed atoms such that density is ~0.0324 N/A^3
 #
-create_atoms        1 random 4096 63782 water
+create_atoms        1 random 3981 63782 water
 mass                1 18.015
 
 

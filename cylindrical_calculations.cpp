@@ -35,6 +35,7 @@ using namespace std;
 
 
 // Function Declarations
+
 int a(int i, int j, int N);
 int b(int i);
 

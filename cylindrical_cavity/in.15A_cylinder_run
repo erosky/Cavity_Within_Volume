@@ -41,19 +41,19 @@ group		surface dynamic all region surface_reg
 # compute pressure core
 compute        peratom_core core stress/atom NULL
 compute        p_core core reduce sum c_peratom_core[1] c_peratom_core[2] c_peratom_core[3]
-variable       press_core equal -(c_p_core[1]+c_p_core[2]+c_p_core[3])/(3*2974.46)
+variable       press_core equal -(c_p_core[1]+c_p_core[2]+c_p_core[3])/(3*86039.58)
 
 
 # compute pressure surface
 compute        peratom_surf surface stress/atom NULL
 compute        p_surf surface reduce sum c_peratom_surf[1] c_peratom_surf[2] c_peratom_surf[3]
-variable       press_surf equal -(c_p_surf[1]+c_p_surf[2]+c_p_surf[3])/(3*13220)
+variable       press_surf equal -(c_p_surf[1]+c_p_surf[2]+c_p_surf[3])/(3*36819.46)
 
 # compute order parameter
 compute	order all orientorder/atom nnn NULL cutoff 3.5
 compute        peratom all stress/atom NULL
 compute        p all reduce sum c_peratom[1] c_peratom[2] c_peratom[3]
-variable       press equal -(c_p[1]+c_p[2]+c_p[3])/(3*16194.28)
+variable       press equal -(c_p[1]+c_p[2]+c_p[3])/(3*122859.05)
 
 # Run 5ns simulation
 thermo_style        custom step temp press vol etotal ke pe v_press v_press_core v_press_surf
