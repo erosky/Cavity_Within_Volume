@@ -6,23 +6,23 @@ START=230
 END=205
 PRESSURE=1
 
-for VARIABLE in 2 3
+for VARIABLE in 2
 do
 	echo $VARIABLE
 	mkdir analysis/run_$VARIABLE
 
-	./ice_ratio.awk run_$VARIABLE/prod.pres_density_$VARIABLE.dump > analysis/run_$VARIABLE/ice_ratio.dat
+	./ice_ratio.awk run_$VARIABLE/prod.pres_density_$VARIABLE.dump > analysis/run_$VARIABLE/ice_ratio_mid.dat
 
 	# make plot of ice ratio, raw data
 	gnuplot -e "set terminal png size 1000,600; \
-	    set output 'analysis/run_$VARIABLE/ice_ratio_raw.png'; \
+	    set output 'analysis/run_$VARIABLE/ice_ratio_mid.png'; \
             set title 'Ice Ratio vs. Temperature, ML-mW, $PRESSURE atm - raw data'; \
             set ylabel 'N ice / N total'; \
             set xlabel 'Temp (K)'; \
             set style data lines; \
             set xrange [$START:$END] reverse; \
             set xtics $END,2; \
-            plot 'analysis/run_$VARIABLE/ice_ratio.dat' using 3:7"
+            plot 'analysis/run_$VARIABLE/ice_ratio_mid.dat' using 3:7"
 	
 	# get running average of ice_ratio
 	#running_avg.awk analysis/run_$VARIABLE/ice_ratio.dat > analysis/run_$VARIABLE/ice_ratio_smooth.dat
