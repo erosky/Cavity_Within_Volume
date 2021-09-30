@@ -40,6 +40,13 @@ int a(int i, int j, int N);
 int b(int i);
 
 
+void loadDataArray(string filename, double arr[]);
+int findN(string filename); // Find number of atoms in simulation
+int fintL(string filename); // Find number of timesteps in simulation
+
+double computeCoM(double 
+
+
 // UI
 void Problem_Statement()
 {
@@ -60,21 +67,27 @@ void Help_Message()
 //
 int main(int argc, char* argv[])
 { 
-  // Check that number of command line inputs is 1
-  if (argc != 2) {
-    Help_Message();
-    exit(0);
-  }
-
-  // Check that input is an integer, print help message if invalid
-  string input (argv[1]);
-
-  for (int i = 0; i < input.length(); i++) {
-    if (!isdigit(input[i])) {
-    cout << "Wrong type of input argument:" <<endl;
-    Help_Message();
-    exit(0);
+  if ( argc != 2 ) // argc should be 2 for correct execution
+    // We print argv[0] assuming it is the program name
+    cout<<"usage: "<< argv[0] <<" <filename>\n";
+  else {
+    // We assume argv[1] is a filename to open
+    ifstream the_file ( argv[1] );
+    // Always check to see if file opening succeeded
+    if ( !the_file.is_open() )
+      cout<<"Could not open file\n";
+    else {
+      char x;
+      // the_file.get ( x ) returns false if the end of the file
+      //  is reached or an error occurs
+      while ( the_file.get ( x ) )
+        cout<< x;
     }
+   
+    
+    
+    // the_file is closed implicitly here
+  }
   }
 
 
