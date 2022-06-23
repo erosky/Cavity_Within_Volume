@@ -1,0 +1,13 @@
+Create a "I-beam" shaped capillary bridge between two graphite plates.
+
+Surface area of water against substrate should be the same as for the bulk between plates.
+The area of once water-graphite interface should be 2,412.75 square angstroms
+
+We do not barostat the configuration, The capillary may take whatever form and internal pressure that it desires.
+Since the capillary is surrounded by vacuum, the ambient pressure is 0 atm.
+
+We will cool the configuration at a constant cooling rate and observe it's nucleation rate... Does it show effects of negative pressure?
+
+1 atm heterogeneous freezing is 230K
+-500 atm heterogeneous freezing is 235K
+To cover the range, we will cool from 240K to 225K (15K range)

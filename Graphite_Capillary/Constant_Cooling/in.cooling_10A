@@ -1,0 +1,131 @@
+# read data from wall
+# read data from water cylinder
+# save new configuration
+
+
+
+
+
+variable            SEED string 18580
+variable            NAME string 10A_cooling_0
+variable            DIR string run_0
+variable            PRES string 1
+variable            START_TEMP string 225
+variable            END_TEMP string 210
+variable            STEPS string 6000000
+variable            TCOUPL string 5000.0
+variable            PCOUPL string 10000.0
+variable            TDAMP string 1000.0
+variable            PDAMP string 2500.0
+
+units	   	    real
+atom_style 	    atomic
+log		    ${DIR}/log.eq_${NAME}
+
+
+variable Z_SHIFT equal 10.062000000000001
+
+
+
+read_data ../data.graphite_wall group wall extra/atom/types 1
+read_data ../data.10A_cylinder add append shift 0.0 0.0 ${Z_SHIFT} group drop offset 1 0 0 0 0
+
+
+
+write_data ${DIR}/data.initial_${NAME}
+
+# Define potential
+#
+pair_style          sw
+pair_coeff * * ../mWC.sw C mW
+
+
+# Delete water and ice atoms that are overlapping
+#
+delete_atoms overlap 2.5 drop wall
+
+
+# Add velocity/set timestep
+#
+
+fix		1 wall setforce 0.0 0.0 0.0
+velocity 	wall set 0.0 0.0 0.0
+velocity            drop create ${START_TEMP} 120598 rot yes dist gaussian
+timestep            5.0
+
+# Define output
+#
+compute	            1 drop msd
+compute		    2 drop stress/atom NULL
+thermo	            100
+thermo_style        custom step temp press vol etotal ke pe c_1[4] density
+
+# Neighbor lists
+#
+neigh_modify        delay 0 every 1 check yes
+
+# Set fixes
+#
+fix                 2 drop momentum 10 linear 1 1 1 rescale
+fix                 3 all nve
+fix                 4 drop temp/csvr ${START_TEMP} ${START_TEMP} 500.0 928347
+
+# Run 0.25 ns equilibration
+#
+dump                1 all custom 100 eq.${NAME}.dump id type x y z vx vy vz
+run                 50000
+write_data 	    data.${NAME}
+
+undump              1
+unfix               4
+
+
+
+################################################
+#######         Run Simulation         #########
+################################################  
+
+reset_timestep      0
+timestep	    10.0
+log                 ${DIR}/log.run_${NAME}
+
+# Set production fixes - Nose/Hoover
+#
+fix                 4 drop temp/csvr ${START_TEMP} ${END_TEMP} 500.0 928347
+
+
+# divide "droplet" into core and surface
+region		core_reg cylinder z 135 135 44.6 20 INF units box
+region		surface_reg cylinder z 135 135 44.6 20 INF units box side out
+group		core dynamic all region core_reg
+group		surface dynamic all region surface_reg
+
+# compute pressure core
+compute        peratom_core core stress/atom NULL
+compute        p_core core reduce sum c_peratom_core[1] c_peratom_core[2] c_peratom_core[3]
+variable       press_core equal -(c_p_core[1]+c_p_core[2]+c_p_core[3])/(3*1249982.5)
+
+
+# compute pressure surface
+compute        peratom_surf surface stress/atom NULL
+compute        p_surf surface reduce sum c_peratom_surf[1] c_peratom_surf[2] c_peratom_surf[3]
+variable       press_surf equal -(c_p_surf[1]+c_p_surf[2]+c_p_surf[3])/(3*55530.7)
+
+# compute total pressure of drop
+compute        peratom drop stress/atom NULL
+compute        p drop reduce sum c_peratom[1] c_peratom[2] c_peratom[3]
+variable       press equal -(c_p[1]+c_p[2]+c_p[3])/(3*180513.2)
+
+
+# compute order parameter
+compute             3 all orientorder/atom nnn NULL cutoff 3.5
+
+# compute center of mass of bridge
+compute 	4 drop com
+
+# Run simulation
+thermo_style        custom step temp press vol etotal ke pe v_press v_press_core v_press_surf c_4[*]
+thermo              200
+dump		        1 all custom 400 ${DIR}/prod.${NAME}.dump id type x y z vx vy vz c_3[*] c_2[*]
+run                 ${STEPS}
+write_data 		${DIR}/data.${NAME}_run

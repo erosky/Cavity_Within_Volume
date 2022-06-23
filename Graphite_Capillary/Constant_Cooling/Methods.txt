@@ -1,0 +1,11 @@
+set up for running on portage.
+cooling at a rate of 0.25 K/ns
+225K to 210K
+
+
+
+larger radius of droplet is roughly 42.65 Angstroms
+making total surface area of droplet-graphite interface to be 2 x 5690.5 square angstroms
+11381 square angstroms
+
+This area is slightly over 2x more than in the case of bulk water sandwiched between graphite plates.

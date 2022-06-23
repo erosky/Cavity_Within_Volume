@@ -9,7 +9,7 @@ function get_N(data_file)
 define labels from rows after "ITEMS: ATOMS"
 
 
-LxNxM matrix
+LxNxM matrix - "full_arr"
 
 L = timesteps
 N = atoms
@@ -23,7 +23,7 @@ for each line after "ITEMS: ATOMS", check first row for index, add following row
 
 
 
-FIND CENTER OF MASS
+FIND CENTER OF MASS - "com_arr"
 
 function center_mass(matrix) ---- best as an array
 
@@ -49,12 +49,14 @@ y = y_i - y_cm
 r_i = sqrt(x^2 + y^2)
 
 New matrix is LxN where the value is r_i for each atom at each timestep
+- "rad_arr"
 
 --------
 define bin_width
 define r_max
 
 New matrix LxRxM where L = timesteps, R=r_max/bin_width, and M = properties
+"shell_arr"
 
 properties:
 - N_s = number of atoms in shell

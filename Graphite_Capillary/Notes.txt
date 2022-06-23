@@ -1,0 +1,6 @@
+MArch 28, 2022
+
+Set up graphite sheet ~265/265 A
+ Making a mW water tube that is 2.0 nm tall, and 4.5 nm in radius
+ 
+ Will try equilibrating the water tube sandwiched between graphite.
