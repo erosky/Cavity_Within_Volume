@@ -23,6 +23,7 @@
 // Execution time			: 
 
 
+
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -37,8 +38,7 @@ using namespace std;
 // Function Declarations
 int findN(string filename); 				// Find number of atoms in simulation
 int fintL(string filename); 				// Find number of timesteps in simulation
-int findLenProps(string filename);	// Find number of atom properties 
-																		// given in dumpfile
+int findLenProps(string filename);	// Find number of atom properties given in dumpfile
 
 
 // UI
