@@ -11,3 +11,10 @@ We will cool the configuration at a constant cooling rate and observe it's nucle
 1 atm heterogeneous freezing is 230K
 -500 atm heterogeneous freezing is 235K
 To cover the range, we will cool from 240K to 225K (15K range)
+
+
+Approximate volume of water:
+4 layers --- 35 x 68.926 x 12 = 28,949.92 cubic angstroms
+6 layers --- 35 x 68.926 x 18 = 43423.38 (1355 water molecules)
+8 layers --- 35 x 68.926 x 24 = 57897.84 (1794 water molecules)
+^ These can all be refined using the "construct surface mesh" tool in ovito
