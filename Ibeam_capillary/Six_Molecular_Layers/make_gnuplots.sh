@@ -9,11 +9,11 @@
 echo $1
 
 run=$1
-start=52 
-end=120052 
+start=65 
+end=30065 
 logfile="./Constant_Cooling/run_${run}/log.run_ibeam_cooling_${run}"
-directory="./Constant_Cooling/analysis/run_${run}"
-datafile="./Constant_Cooling/analysis/run_${run}/run_ibeam_cooling_${run}.dat"
+directory="./analysis/run_${run}"
+datafile="./analysis/run_${run}/run_ibeam_cooling_${run}.dat"
 
 temp="240-225"
 pres="6Layers"

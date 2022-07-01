@@ -6,7 +6,7 @@ START=240
 END=225
 LAYERS=6
 
-for VARIABLE in 0 1 2 3 4 5
+for VARIABLE in 0 1 2 3 4
 do
 	echo $VARIABLE
 	mkdir analysis/run_$VARIABLE

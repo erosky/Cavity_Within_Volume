@@ -123,7 +123,7 @@ compute        3 all orientorder/atom nnn NULL cutoff 3.5
 compute 	4 water com
 
 # Run simulation
-thermo_style        custom step c_2 press vol etotal ke pe v_press c_1 c_4[*]
+thermo_style        custom step c_2 press vol etotal ke pe v_press c_1[4] c_4[*]
 thermo              200
 dump		     1 all custom 400 ${DIR}/prod.${NAME}.dump id type x y z vx vy vz c_3[*] c_peratom[*]
 run                 ${STEPS}
