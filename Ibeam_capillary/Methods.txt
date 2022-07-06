@@ -18,3 +18,9 @@ Approximate volume of water:
 6 layers --- 35 x 68.926 x 18 = 43423.38 (1355 water molecules)
 8 layers --- 35 x 68.926 x 24 = 57897.84 (1794 water molecules)
 ^ These can all be refined using the "construct surface mesh" tool in ovito
+
+Need to add 11.46 Angstroms onto y axis in order to get the desired surface area.
+
+
+
+
