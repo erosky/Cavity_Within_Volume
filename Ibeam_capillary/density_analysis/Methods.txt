@@ -1,0 +1,12 @@
+We want to get a sense of the density profile within the Ibeam capillary.
+
+
+For each z-bin we want to know the average density
+- for each z-bin, find the average densiy averaged over y-bin
+- where the y-bin density is N_in_bin / bin_volume 
+- where bin_volume = (max_x - min_x)*y_binw*z_binw
+- the average density in that z-layer is the average density of all y-bins
+
+
+Possible additional steps:
+- exclude molecules at the liquid-vacuum interface
