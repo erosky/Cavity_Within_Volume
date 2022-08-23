@@ -1,0 +1,24 @@
+For each run, find average surface area and std deviation.
+Then, average over all runs.
+Print data to surfacearea_summary.data
+
+
+1 -- use calculate_surface_area.sh to scan through dumpfiles, this scripts invokes find_surface.awk
+2 -- use sum_surface_area.py to get surface area data for each run
+3 -- use sum_runs.py to get the average data for all runs
+
+
+===== 10-layer info =====
+
+
+Timesteps: {0..1120000..160000}
+
+Y-bins: 0 3.0406 6.0812 9.1218 12.1624 15.203 18.2436 21.2842 24.3248 27.3654 30.406 33.4466 \
+	36.4872 39.5278 42.5684 45.609 48.6496 51.6902 54.7308 57.7714 60.812 63.8526 66.8932 69.9338
+
+Ybin width: 3.0406
+
+Z top: 37.5
+
+Z bottom: 12
+

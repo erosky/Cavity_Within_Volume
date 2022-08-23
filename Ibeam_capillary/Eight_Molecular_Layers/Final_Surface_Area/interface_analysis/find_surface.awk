@@ -18,16 +18,15 @@
 # Outut file will have TIME, TEMP, YBIN, XMIN_TOP, XMAX_TOP, XMIN_BOT, XMAX_BOT, AREA_TOP, AREA_BOT, TOTAL_AREA
 
 
-BEGIN { YBIN = 0 ;
-	STEP = 240000 ;
-	TOTAL = 1794 ; 
+BEGIN { YBIN = 77.751 ;
+	STEP = 1120000 ; 
 	ZTOP = 32 ;
 	ZBOTTOM = 12 ;
-	YBIN_WIDTH = 4 ; XMIN_TOP = 9999 ; XMAX_TOP = -9999 ; XMIN_BOT = 9999 ; XMAX_BOT = -9999 ; start = 0 } 
+	YBIN_WIDTH = 3.11004 ; XMIN_TOP = 9999 ; XMAX_TOP = -9999 ; XMIN_BOT = 9999 ; XMAX_BOT = -9999 ; start = 0 } 
 {
 	if ($2=="TIMESTEP") {
 		if (start==1) { 
-			print step*0.00001 "\t" 240-step*0.25*0.00001 "\t" YBIN "\t" XMIN_TOP "\t" XMAX_TOP "\t" XMIN_BOT "\t" XMAX_BOT "\t" (XMAX_TOP-XMIN_TOP)*YBIN_WIDTH "\t" (XMAX_BOT-XMIN_BOT)*YBIN_WIDTH "\t" (XMAX_TOP-XMIN_TOP)*YBIN_WIDTH+(XMAX_BOT-XMIN_BOT)*YBIN_WIDTH} ; 
+			print step*0.00001 "\t" 240-step*0.25*0.00001 "\t" YBIN "\t" XMIN_TOP "\t" XMAX_TOP "\t" XMIN_BOT "\t" XMAX_BOT "\t" (XMAX_TOP-XMIN_TOP)*YBIN_WIDTH "\t" (XMAX_BOT-XMIN_BOT)*YBIN_WIDTH "\t" (XMAX_TOP-XMIN_TOP)*YBIN_WIDTH+(XMAX_BOT-XMIN_BOT)*YBIN_WIDTH ; exit } ; 
 			start = 0 ; t = 1 ; a = 0 ;  next 
 	}
 	if (t==1 && $0==STEP) { step = $0 ; t = 0 ; start = 1 ; next }
