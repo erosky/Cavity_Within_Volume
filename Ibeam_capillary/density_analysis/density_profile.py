@@ -85,7 +85,7 @@ zbin_keys = ['dataframe', 'density', 'N', 'fraction', 'width']
 
 ## Plot the results
 plt.figure(1)
-plt.plot(zbin_edges, density_data)
+plt.plot(zbin_edges, fraction_data, 'o')
 plt.show()
 
 
