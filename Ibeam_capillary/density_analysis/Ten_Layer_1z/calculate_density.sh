@@ -11,7 +11,7 @@
 # -- where bin_volume = (max_x - min_x)*y_binw*z_binw
 # -- the average density in that z-layer is the average density of all y-bins
 
-DIR=../../Eight_Molecular_Layers/Final_Surface_Area
+DIR=../../Ten_Molecular_Layers
 
 
 for RUN in 5

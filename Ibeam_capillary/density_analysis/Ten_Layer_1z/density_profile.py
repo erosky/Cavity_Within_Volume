@@ -10,7 +10,7 @@ import pandas as pd
 N_total = 2126 # Total number of water molecules
 
 ## Timesteps is a list of timesteps, each associated with a dictionary of zbin slices. These are the keys to timestep_dict
-timesteps = [0]
+timesteps = [0, 320000]
 #steps = list(range(0, 640000, 80000))
 timestep_dict = {}
 ## The items in timestep_dict are  zbin_data_dict
