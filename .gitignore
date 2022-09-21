@@ -4,6 +4,7 @@
 # exclude video files, which are often too large
 *.mp4
 *.mov
+*.avi
 
 # exclude symbolic links to lammps software
 lmp_mpi

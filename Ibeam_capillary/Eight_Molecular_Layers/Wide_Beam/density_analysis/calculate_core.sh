@@ -16,7 +16,7 @@ DIR=../Box_Setup
 
 for timestep in {45000..47500..500}
 do
-	output=core/$timestep.dat
+	output=full58/$timestep.dat
 	truncate -s 0 $output
 	sed -i -E "22 s/[0-9]+/$timestep/" find_core.awk
 	for zbin in {0..35..1}

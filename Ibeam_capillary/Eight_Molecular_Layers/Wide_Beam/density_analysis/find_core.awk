@@ -16,15 +16,16 @@
 
 # Output one file for every 40,000 timesteps
 # Outut file will have YBIN, N, XMIN, XMAX, XWIDTH, BIN_VOLUME, BIN_DENSITY
-
+# VOL = (X_MAX-X_MIN+2)*Y_WIDTH*ZBIN_WIDTH
 
 
 BEGIN { STEP = 47500 ; 
 	ZBIN = 35 ;
 	ZBIN_WIDTH = 1.0 ;
-	X_MIN = 63.752 ;
-	X_MAX = 93.572 ;
-	N = 0 ; VOL = 1293.7774 ; start = 0 } 
+	X_MIN = 50.0 ;
+	X_MAX = 108.0 ;
+	Y_WIDTH = 40.430543199995086;
+	N = 0 ; VOL = (X_MAX-X_MIN+2)*Y_WIDTH*ZBIN_WIDTH ; start = 0 } 
 {
 	if ($2=="TIMESTEP") {
 		if (start==1) { print ZBIN "\t" N "\t" N/VOL ; exit } ; 

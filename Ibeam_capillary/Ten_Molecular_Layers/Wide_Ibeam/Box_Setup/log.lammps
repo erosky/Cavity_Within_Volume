@@ -1,0 +1,23 @@
+LAMMPS (29 Oct 2020)
+# read in graphite data
+# insert water
+# equilibrate
+
+
+
+# graphite dimensions:
+# 0.0 10.062000000000001 zlo zhi
+
+
+variable            TEMP string 240
+variable            PRES string 1
+variable            NAME string Ibeam_240K
+variable            TCOUPL string 5000.0
+variable            PCOUPL string 10000.0
+variable            TDAMP string 1000.0
+variable            PDAMP string 10000.0
+
+units	   	    real
+atom_style 	    atomic
+log		    log.eq_${NAME}
+log		    log.eq_Ibeam_240K

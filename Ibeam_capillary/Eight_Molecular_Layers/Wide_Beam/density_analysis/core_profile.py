@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 import os
 import pandas as pd
 
-output = "24A_core_profile.dat"
+output = "24A_full58_profile_longrun.dat"
 
 timesteps = list(range(45000, 47500, 500))
 zbin_edges = list(range(0, 35, 1))
@@ -21,7 +21,7 @@ data = []
 ##
 
 for step in timesteps:
-	zbin_data = np.loadtxt('./core/'+str(step)+'.dat')
+	zbin_data = np.loadtxt('./full58/'+str(step)+'.dat')
 	zbin_data = zbin_data.transpose()
 	data.append(zbin_data[2])
 

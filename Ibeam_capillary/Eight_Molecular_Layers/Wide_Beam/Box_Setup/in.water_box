@@ -87,7 +87,7 @@ unfix               4
 write_data		data.whole_${NAME}
 
 
-# Create the I-beam, width 35A
+# Create the I-beam, width 65A
 region beam block 46.252 111.252 0.0 INF 0.0 INF side out
 delete_atoms region beam
 
