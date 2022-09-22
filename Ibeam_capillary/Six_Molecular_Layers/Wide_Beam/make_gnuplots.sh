@@ -10,15 +10,15 @@ echo $1
 
 run=$1
 start=65 
-end=30065 
+end=26065 
 logfile="./Constant_Cooling/run_${run}/log.run_ibeam_cooling_${run}"
 directory="./analysis/run_${run}"
 datafile="./analysis/run_${run}/run_ibeam_cooling_${run}.dat"
 
-temp="240-225"
+temp="240-227"
 pres="6Layers"
 Tstart=240
-Tend=225
+Tend=227
 
 
 

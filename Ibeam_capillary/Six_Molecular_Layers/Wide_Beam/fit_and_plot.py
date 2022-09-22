@@ -75,7 +75,7 @@ S_avg = (S_sum/len(freeze_temperatures))**(0.5)
 all_runs_plot = 'analysis/fits_6layer.png'
 
 plt.figure(1)
-plt.xlim(240,225)
+plt.xlim(240,227)
 plt.ylim(0,1.0)
 plt.title('Heterogeneous freezing in Ibeam graphite capillary with 6 water layers, MLmW Model, 0.25 K/ns')
 plt.xlabel('Temperature (K)')
@@ -98,7 +98,7 @@ plt.savefig(all_runs_plot)
 all_gradients_plot = 'analysis/gradient_fit_6layers.png'
 
 plt.figure(2)
-plt.xlim(240,225)
+plt.xlim(240,227)
 plt.title('Heterogeneous freezing in Ibeam graphite capillary with 6 water layers, MLmW Model, 0.25 K/ns')
 plt.xlabel('Temperature (K)')
 plt.ylabel('Rate of change for (N ice / N total)')
