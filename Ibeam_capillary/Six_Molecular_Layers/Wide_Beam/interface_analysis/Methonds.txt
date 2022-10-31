@@ -1,0 +1,16 @@
+For each run, find average surface area and std deviation.
+Then, average over all runs.
+Print data to surfacearea_summary.data
+
+
+**** THE temperature in the timestep files are off by 5 kelvin!
+
+
+1 -- use calculate_surface_area.sh to scan through dumpfiles, this scripts invokes find_surface.awk
+2 -- use sum_surface_area.py to get surface area data for each run
+3 -- use sum_runs.py to get the average data for all runs
+
+
+3.066
+
+

@@ -1,5 +1,8 @@
 cooling rate = 0.25E9 K/s
 
+
+========== NARROW IBEAMS ===========
+
 8 Layer Ibeam:
 
 area_max_8 = 4.979058e-17
@@ -9,9 +12,6 @@ area_min_8 = 4.829574e-17
 
 area_max_10 = 4.8229306e-17
 area_min_10 = 4.673116e-17
-
-
-
 
 =================================
 =================================
@@ -28,3 +28,15 @@ Temp		&	Max		&	Min
 Temp		&	Max 		&	Min
 228.3460	&	4.3498e24	&	4.4893e24				
 230.7060	&	0.9459e24	&	0.9762e24
+
+
+=========== WIDE IBEAMS ==============
+
+6 Layer Ibeam:
+area = 4.409e-17
+
+8 Layer Ibeam:
+area = 4.585e-17
+
+10 Layer Ibeam:
+area = 4.441e-17
