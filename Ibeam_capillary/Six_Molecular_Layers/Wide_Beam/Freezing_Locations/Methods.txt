@@ -1,0 +1,3 @@
+if too difficult to identify initial cluster, then i skip that run
+
+Position is determined to be center of mass of largest cluster.

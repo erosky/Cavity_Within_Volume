@@ -39,14 +39,15 @@ print(scale)
 
 fig = plt.figure()
 plt.imshow(graphite, extent=(0, dimx, 0, dimz))
-plt.plot([109, 103.9, 109], [38.6, 25, 11], color = 'green')
-sctr = plt.scatter(freezing_data[1], freezing_data[3], 1000.0, alpha=0.5, c=freezing_data[0], cmap='winter', norm=norm)
+#plt.plot([109, 103.9, 109], [38.6, 25, 11], color = 'green')
+sctr = plt.scatter(freezing_data[1], freezing_data[3], 500.0, alpha=0.5, c=freezing_data[0], cmap='winter', norm=norm)
 #ax.hist(freezing_data[0], density=False, bins=10, histtype='step')
 plt.axvspan(left_lower, left_upper, alpha=0.5, color='red')
 plt.axvspan(right_lower, right_upper, alpha=0.5, color='red')
 
-bar = fig.colorbar(sctr)
+bar = fig.colorbar(sctr,orientation='horizontal')
 bar.set_label('Freezing temperature')
+plt.xlabel(' X-dimension of simulation box (Angstroms)')
+plt.ylabel(' Z-dimension of simulation box (Angstroms)')
 
-plt.show()
-
+plt.savefig('xz_freezing_locations.png', dpi=1000)
