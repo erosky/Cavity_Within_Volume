@@ -55,7 +55,6 @@ sctr = plt.scatter(freezing_data[1], freezing_data[2], 1500.0, alpha=0.5, c=free
 #ax.hist(freezing_data[0], density=False, bins=10, histtype='step')
 plt.axvspan(left_lower10, left_upper8, alpha=0.5, color='red')
 plt.axvspan(right_lower8, right_upper10, alpha=0.5, color='red')
-
 bar = fig.colorbar(sctr)
 bar.set_label('Freezing temperature')
 
