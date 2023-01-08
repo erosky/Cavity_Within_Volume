@@ -60,8 +60,10 @@ xgrid = linspace(0,30,100);
 h = histogram(X_events,binEdges,'Normalization','pdf');
 hold on
 er = errorbar(binCenters,y,err, "o", 'LineWidth', 1, 'Color', 'k');
-xlabel('Distance from three phase contact line (Angstroms)');
-ylabel('Probability Density (A^-^1)');
+xlabel('Distance from three phase contact line (\AA)','interpreter','latex'); 
+ylabel('Probability Density (\AA$^{-1}$)','interpreter','latex');
+xlim([0 30]);
+ylim([0 0.1]);
 %pdfEst = pdf(pd,xgrid);
 %line(xgrid,pdfEst,'LineWidth', 2, 'Color', 'k')
 hold off

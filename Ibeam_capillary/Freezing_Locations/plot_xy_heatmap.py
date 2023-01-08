@@ -96,8 +96,10 @@ for i in np.arange(len(y)-1):
 fig, ax = plt.subplots(constrained_layout=True)
 heatmap = ax.pcolormesh(x_array, y, [prob_array,prob_array], shading='nearest', cmap='Blues', vmin=0, vmax=0.1)
 sctr = plt.scatter(freezing_data[1], freezing_data[2], marker='D', color='Black', label='Freezing locations')
-plt.axvspan(left_lower10, left_upper8, alpha=0.5, color='brown', hatch='xxx')
-plt.axvspan(right_lower8, right_upper10, alpha=0.5, color='brown', hatch='xxx')
+plt.axvspan(left_lower10, left_upper8, alpha=0.5, color='black', hatch='OOO')
+plt.axvspan(right_lower8, right_upper10, alpha=0.5, color='black', hatch='OOO')
+plt.axvspan(0, left_lower10, alpha=0.5, color='tab:brown', hatch='xxx')
+plt.axvspan(right_upper10, 150, alpha=0.5, color='tab:brown', hatch='xxx')
 plt.ylim([-10,40])
 plt.xlim([0,150])
 
@@ -108,7 +110,7 @@ plt.xlabel('x position ($\AA$)')
 plt.ylabel('y position ($\AA$)')
 
 handles, labels = plt.gca().get_legend_handles_labels()
-patch = mpatches.Patch(facecolor='brown', edgecolor='brown', alpha=0.5, hatch='xxx', label='Air-water interface')  
+patch = mpatches.Patch(facecolor='black', edgecolor='black', alpha=0.5, hatch='OOO', label='Air-water interface')  
 
 handles.extend([patch])
 plt.legend(loc='lower left', handles=handles)
@@ -118,7 +120,7 @@ ax.set_aspect('equal')
 figure_size = plt.gcf().get_size_inches()
 plt.gcf().set_size_inches(1.25 * figure_size)
 
-plt.savefig('xy_heatmap.png', dpi=1000)
+plt.savefig('xy_heatmap_new.png', dpi=1000)
 
 '''
 fig = plt.figure()

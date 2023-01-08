@@ -59,8 +59,8 @@ r75 = icdf(pd,0.99)
 h1 = figure(1);
 xgrid = linspace(0,15,100);
 h = histogram(X_events,binEdges,'Normalization','pdf');
-xlabel('Distance from substrate (Angstroms)');
-ylabel('Probability Density (A^-^1)');
+xlabel('Distance from substrate (\AA)','interpreter','latex');
+ylabel('Probability Density (\AA$^{-1}$)','interpreter','latex');
 pdfEst = pdf(pd,xgrid);
 line(xgrid,pdfEst,'LineWidth', 2, 'Color', 'k')
 hold on
