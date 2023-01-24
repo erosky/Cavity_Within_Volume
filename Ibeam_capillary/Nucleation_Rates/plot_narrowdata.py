@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 
 
 y = [333333333.333, 416666666.667, 555555555.556]
-ticklabels= [r'$\frac{1}{\infty}$', r'$\frac{1}{30 A}$', r'$\frac{1}{24 A}$', r'$\frac{1}{18 A}$']
+ticklabels= [r'$\frac{1}{\infty}$', r'$\frac{1}{30 \AA}$', r'$\frac{1}{24 \AA}$', r'$\frac{1}{18 \AA}$']
 
 bounds= [2.63/2, 2.55/2, 3.3/2]
 
@@ -24,7 +24,7 @@ plt.errorbar(cap[0], cap[1], yerr=cap[2], fmt='bD', alpha=0.5, linewidth=1.0, ca
 
 #plt.xlim(0, 0.2)
 #plt.ylim(0, 8)
-plt.xlabel(r'1/h (A$^{-1}$) where h=capillary height')
+plt.xlabel(r'1/h ($\AA^{-1}$) where h=capillary height')
 plt.ylabel(r'Temperature (K) of $J_{het}=10^{24}$ s$^{-1}$m$^{-2}$')
 #plt.grid(color='#d4d4d4', linestyle='--', linewidth=1)
 plt.xticks([0, 333333333.333, 416666666.667, 555555555.556], ticklabels)
